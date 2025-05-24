@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <h2>Kết quả FizzBuzz</h2>
+    <ul id="result"></ul>
+
+    <script>
+        function fizzBuzz() {
+            let resultList = document.getElementById("result");
+            for (let i = 1; i <= 100; i++) {
+                let item = document.createElement("li");
+                if (i % 3 === 0 && i % 5 === 0) {
+                    item.textContent = "FizzBuzz";
+                } else if (i % 3 === 0) {
+                    item.textContent = "Fizz";
+                } else if (i % 5 === 0) {
+                    item.textContent = "Buzz";
+                } else {
+                    item.textContent = i;
+                }
+                resultList.appendChild(item);
+            }
+        }
+        fizzBuzz();
+    </script>
+</body>
+</html>

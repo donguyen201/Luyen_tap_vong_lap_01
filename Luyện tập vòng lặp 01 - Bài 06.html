@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng 30 số chia hết cho 7</title>
+</head>
+<body>
+    <h2>Tính tổng 30 số chia hết cho 7 đầu tiên</h2>
+    <button onclick="tinhTong()">Tính tổng</button>
+    <p id="ketQua"></p>
+
+    <script>
+        function tinhTong() {
+            let count = 0;
+            let sum = 0;
+            let number = 7; // Bắt đầu từ số chia hết cho 7 đầu tiên
+
+            while (count < 30) {
+                sum += number;
+                count++;
+                number += 7; // Nhảy sang số chia hết cho 7 tiếp theo
+            }
+
+            document.getElementById("ketQua").innerText = "Tổng của 30 số chia hết cho 7 đầu tiên là: " + sum;
+        }
+    </script>
+</body>
+</html>

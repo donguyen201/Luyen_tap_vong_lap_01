@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Đoán Số</title>
+</head>
+<body>
+    <button onclick="choiGame()">Chơi</button>
+
+    <script>
+        function choiGame() {
+            let min = parseInt(prompt("Nhập khoảng nhỏ nhất:"));
+            let max = parseInt(prompt("Nhập khoảng lớn nhất:"));
+            
+            if (isNaN(min) || isNaN(max) || min >= max) {
+                alert("Khoảng nhập vào không hợp lệ!");
+                return;
+            }
+            
+            let soNgauNhien = Math.floor(Math.random() * (max - min + 1)) + min;
+            let soLanThu = 3;
+            
+            for (let i = 0; i < soLanThu; i++) {
+                let duDoan = parseInt(prompt(`Lần ${i + 1}: Nhập số bạn đoán (${min} - ${max})`));
+                
+                if (isNaN(duDoan)) {
+                    alert("Vui lòng nhập một số hợp lệ!");
+                    continue;
+                }
+
+                if (duDoan === soNgauNhien) {
+                    alert("Chúc mừng! Bạn đã đoán đúng!");
+                    return;
+                } else if (duDoan > soNgauNhien) {
+                    alert("Số bạn đoán lớn hơn! Hãy thử lại.");
+                } else {
+                    alert("Số bạn đoán nhỏ hơn! Hãy thử lại.");
+                }
+            }
+            
+            alert(`Bạn đã hết lượt đoán! Số đúng là ${soNgauNhien}.`);
+        }
+    </script>
+</body>
+</html>

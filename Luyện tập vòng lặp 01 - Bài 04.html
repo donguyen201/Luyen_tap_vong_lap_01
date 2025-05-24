@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 4 - Fibonacci chia hết cho 5</title>
+</head>
+<body>
+  <h1>Bài 4: Tìm số đầu tiên trong dãy Fibonacci chia hết cho 5</h1>
+  <p id="result">Đang tính...</p>
+
+  <script>
+    let a = 0;
+    let b = 1;
+    let fib = a + b;
+
+    while (true) {
+      if (fib % 5 === 0) {
+        document.getElementById("result").textContent = "Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: " + fib;
+        break;
+      }
+      a = b;
+      b = fib;
+      fib = a + b;
+    }
+  </script>
+</body>
+</html>
