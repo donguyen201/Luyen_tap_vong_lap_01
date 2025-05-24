@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập vòng lặp JavaScript</title>
+</head>
+<body>
+  <h1>Bài tập vòng lặp JavaScript</h1>
+
+  <h2>1. Tính Tổng các số chia 5 dư 2 từ a đến b</h2>
+  <p id="sum52">Đang tính...</p>
+
+  <h2>2. Đếm các số chia 5 dư 2 từ a đến b</h2>
+  <p id="count52">Đang tính...</p>
+
+  <h2>3. In ra: 0, 5, 10, ..., 50</h2>
+  <p id="range5">Đang in...</p>
+
+  <h2>4. In ra: 10, 9, ..., 0</h2>
+  <p id="countdown">Đang in...</p>
+
+  <h2>5. In ra: 50, 45, ..., 0</h2>
+  <p id="countdown5">Đang in...</p>
+
+  <h2>6. Bảng cửu chương 5</h2>
+  <ul id="bang5"></ul>
+
+  <script>
+    // Nhập a và b
+    let a = Number(prompt("Nhập a:"));
+    let b = Number(prompt("Nhập b:"));
+
+    // 1. Tính tổng các số chia 5 dư 2
+    let sum = 0;
+    for (let i = a; i <= b; i++) {
+      if (i % 5 === 2) {
+        sum += i;
+      }
+    }
+    document.getElementById("sum52").textContent = "Tổng là: " + sum;
+
+    // 2. Đếm số chia 5 dư 2
+    let count = 0;
+    for (let i = a; i <= b; i++) {
+      if (i % 5 === 2) {
+        count++;
+      }
+    }
+    document.getElementById("count52").textContent = "Số lượng là: " + count;
+
+    // 3. In ra 0, 5, 10, ..., 50
+    let str1 = "";
+    for (let i = 0; i <= 50; i += 5) {
+      str1 += i + " ";
+    }
+    document.getElementById("range5").textContent = str1.trim();
+
+    // 4. In ra 10, 9, ..., 0
+    let str2 = "";
+    for (let i = 10; i >= 0; i--) {
+      str2 += i + " ";
+    }
+    document.getElementById("countdown").textContent = str2.trim();
+
+    // 5. In ra 50, 45, ..., 0
+    let str3 = "";
+    for (let i = 50; i >= 0; i -= 5) {
+      str3 += i + " ";
+    }
+    document.getElementById("countdown5").textContent = str3.trim();
+
+    // 6. In bảng cửu chương 5
+    const ul = document.getElementById("bang5");
+    for (let i = 1; i <= 10; i++) {
+      const li = document.createElement("li");
+      li.textContent = `5 x ${i} = ${5 * i}`;
+      ul.appendChild(li);
+    }
+  </script>
+</body>
+</html>
